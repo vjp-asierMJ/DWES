@@ -1,0 +1,14 @@
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\bin\Debug\net10.0\NovaWarehouse.exe
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\bin\Debug\net10.0\NovaWarehouse.deps.json
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\bin\Debug\net10.0\NovaWarehouse.runtimeconfig.json
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\bin\Debug\net10.0\NovaWarehouse.dll
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\bin\Debug\net10.0\NovaWarehouse.pdb
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\obj\Debug\net10.0\NovaWarehouse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\obj\Debug\net10.0\NovaWarehouse.AssemblyInfoInputs.cache
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\obj\Debug\net10.0\NovaWarehouse.AssemblyInfo.cs
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\obj\Debug\net10.0\NovaWarehouse.csproj.CoreCompileInputs.cache
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\obj\Debug\net10.0\NovaWarehouse.dll
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\obj\Debug\net10.0\refint\NovaWarehouse.dll
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\obj\Debug\net10.0\NovaWarehouse.pdb
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\obj\Debug\net10.0\NovaWarehouse.genruntimeconfig.cache
+C:\Users\Asier\OneDrive\Desktop\SEGUNDO SUPERIOR\DWES\DWES\Tema2\NovaWarehouse\obj\Debug\net10.0\ref\NovaWarehouse.dll

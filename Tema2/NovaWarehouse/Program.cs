@@ -2,13 +2,13 @@
 
 Console.WriteLine("Hello, World!");
 
-string nombre = "Asier";
+string nombre = "Aimar";
 
 Console.WriteLine($"Hola mi nombre es{nombre}");
 
 var quantity = 120;
 
-Persona persona = new Persona();
+Persona persona = new();
 
 var persona2 = new Persona();
 
@@ -93,16 +93,26 @@ Console.Write("Enter quantity for SKU-4471: ");
 string? rawQuantity = Console.ReadLine();
 string? rawPeso;
 
-if (!int.TryParse(rawQuantity, out int quantity) || quantity <= 0 || quantity > 500)
+if (!int.TryParse(rawQuantity, out quantity) || quantity <= 0 || quantity > 500)
 {
     Console.WriteLine("Invalid quantity. Order line rejected.");
     return;
 }
 
+if (quantity > 500)
+{
+    Console.WriteLine("Invalid quantity. Order line rejected.");
+    return;
+}
+
+Console.Write("Enter weight for SKU-4471: ");
+string? rawWeight = Console.ReadLine();
+
+
 Console.Write("Peso del articulo");
 rawPeso = Console.ReadLine();
 
-if(!double.TryParse(rawPeso, out double peso) || peso <= 0)
+if (!double.TryParse(rawPeso, out double peso) || peso <= 0)
 {
     Console.WriteLine("Peso invalido");
     return;
@@ -110,6 +120,37 @@ if(!double.TryParse(rawPeso, out double peso) || peso <= 0)
 Console.WriteLine($"Added {quantity} units of SKU-4471 to the order.");
 
 
+// Casa
+
+//1.Añade un caso para pedidos con Total == 0 , y clasifícalo como "Free order"
+//  if/else clásico: equivalente al switch expression anterior
+string Classify(Order order)
+{
+    if (order.Status == "Cancelled") return "Ignore";
+    if (order.Total > 1000 && order.Status == "Pending") return "Priority review";
+    if (order.Total > 1000) return "High value";
+    if (order.Status == "Pending") return "Awaiting confirmation";
+    if (order.Total < 100) return "Free order";
+    return "Standard";
+}
+
+//2.Reescribe el descuento por CustomerType añadiendo un 5% extra si Total > 500 (usa un patrón detupla (CustomerType, decimal) )
+decimal GetDiscount(Order order)
+{
+    return (order.CustomerType, order.Total) switch
+    {
+        ("VIP", > 500) => 0.25m,
+        ("VIP", _) => 0.20m,
+
+        ("Regular", > 500) => 0.15m,
+        ("Regular", _) => 0.10m,
+
+        ("New", > 500) => 0.10m,
+        ("New", _) => 0.05m,
+
+        _ => 0m
+    };
+}
 
 //Sesion 1
 class Persona { }
@@ -124,4 +165,6 @@ class Customer
 class Order
 {
     public int Total { get; internal set; }
+    public string Status { get; internal set; }
+    public string CustomerType { get; set; }
 }

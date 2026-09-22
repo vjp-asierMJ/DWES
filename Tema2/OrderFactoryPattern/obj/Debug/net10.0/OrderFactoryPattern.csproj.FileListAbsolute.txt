@@ -1,0 +1,15 @@
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\OrderFactoryPattern.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\OrderFactoryPattern.AssemblyInfoInputs.cache
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\OrderFactoryPattern.AssemblyInfo.cs
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\OrderFactoryPattern.csproj.CoreCompileInputs.cache
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\OrderFactoryPattern.sourcelink.json
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\bin\Debug\net10.0\OrderFactoryPattern.exe
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\bin\Debug\net10.0\OrderFactoryPattern.deps.json
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\bin\Debug\net10.0\OrderFactoryPattern.runtimeconfig.json
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\bin\Debug\net10.0\OrderFactoryPattern.dll
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\bin\Debug\net10.0\OrderFactoryPattern.pdb
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\OrderFactoryPattern.dll
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\refint\OrderFactoryPattern.dll
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\OrderFactoryPattern.pdb
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\OrderFactoryPattern.genruntimeconfig.cache
+C:\Users\alumno\DWES\DWES\Tema2\OrderFactoryPattern\obj\Debug\net10.0\ref\OrderFactoryPattern.dll

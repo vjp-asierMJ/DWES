@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using OrderFactoryPattern;
+using static OrderFactoryPattern.OrderFactory;
 
 List<Order> _orders = [
     // Ojo, como no uso el Factory he puesto los descuentos a mano;
@@ -33,7 +34,12 @@ while (true)
             Console.Write("Introduzca la cantidad total del pedido: ");
             string? totalInput = Console.ReadLine();
 
-            if (!TryCreateOrder(id, customerType, totalInput, out Order? order, out string? error))
+            Console.Write("$Introduzca el tipo de pedido {Standar, Express}:");
+            string? orderType = Console.ReadLine();
+
+
+
+            if (!TryCreateOrder(id, customerType, totalInput,orderType, out Order? order, out string? error))
             {
                 Console.WriteLine(error);
                 continue;
@@ -73,7 +79,7 @@ void ListOrders()
 
 // C# tiene mecaniusmos como los llamados Attributes:
 // NotNullWhen es un atributo que indica que el parámetro de salida "order" no será nulo cuando el método devuelva true.
-bool TryCreateOrder(string? id, string? customerType, string? totalInput,
+bool TryCreateOrder(string? id, string? customerType, string? totalInput,string? orderType,
     [NotNullWhen(true)] out Order? order, out string? error)
 {
     order = null;
@@ -97,7 +103,13 @@ bool TryCreateOrder(string? id, string? customerType, string? totalInput,
         return false;
     }
 
-    order = OrderFactory.Create(id, type, total);
+    if (!Enum.TryParse(orderType, out ShippingType  shippingType))
+    {
+        error = "Tipo de envio inválido.";
+        return false;
+    }
+
+    order = OrderFactory.Create(id, type, total,shippingType);
 
     return true;
 }

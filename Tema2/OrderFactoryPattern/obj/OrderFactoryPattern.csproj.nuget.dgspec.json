@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj": {}
+    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj": {
+    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj",
+        "projectUniqueName": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj",
         "projectName": "OrderFactoryPattern",
-        "projectPath": "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj",
-        "packagesPath": "C:\\Users\\Asier\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\obj\\",
+        "projectPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj",
+        "packagesPath": "C:\\Users\\alumno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asier\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\alumno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\NovaWarehouse\\NovaWarehouse.csproj": {}
+    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\NovaWarehouse\\NovaWarehouse.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\NovaWarehouse\\NovaWarehouse.csproj": {
+    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\NovaWarehouse\\NovaWarehouse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\NovaWarehouse\\NovaWarehouse.csproj",
+        "projectUniqueName": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\NovaWarehouse\\NovaWarehouse.csproj",
         "projectName": "NovaWarehouse",
-        "projectPath": "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\NovaWarehouse\\NovaWarehouse.csproj",
-        "packagesPath": "C:\\Users\\Asier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\NovaWarehouse\\obj\\",
+        "projectPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\NovaWarehouse\\NovaWarehouse.csproj",
+        "packagesPath": "C:\\Users\\alumno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\NovaWarehouse\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asier\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\alumno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

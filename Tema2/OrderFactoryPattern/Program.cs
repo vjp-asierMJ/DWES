@@ -1,59 +1,58 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using OrderFactoryPattern;
-using static OrderFactoryPattern.OrderFactory;
+using NovaWarehouse;
+using NovaWarehouse.Models;
+using NovaWarehouse.Exceptions;
+Warehouse warehouse = new("NovaWarehouse");
+warehouse.AddProduct(new Product("Steel Bracket", 4.25m, 120));
+warehouse.AddProduct(new Product("Cardboard Box", 0.80m, 500));
+warehouse.AddProduct(new Product("Pallet Wrap", 12.50m, 30));
+warehouse.AddProduct(new Product("Safety Helmet", 18.90m, 15));
 
-List<Order> _orders = [
-    // Ojo, como no uso el Factory he puesto los descuentos a mano;
-    // lo ideal es usar el OrderFactory.Create para crear los pedidos.
-    new StandarOrder("ORD-0001", CustomerType.Regular, 100.00m),
-    new ExpressOrder("ORD-0002", CustomerType.Premium, 200.00m),
-    new StandarOrder("ORD-0003", CustomerType.Vip, 300.00m),
-];
+// customer y shipping son parámetros opcionales: si no los pasamos, se usan sus valores por defecto
+warehouse.PlaceOrder("Cardboard Box", quantity: 100, CustomerType.Premium, ShippingType.Express);
+warehouse.PlaceOrder("Steel Bracket", quantity: 20);
 
-Console.WriteLine("=== ORDER FACTORY ===");
+Console.WriteLine($"=== {warehouse.Name.ToUpper()} ===");
 
 while (true)
 {
-    Console.WriteLine("1. Crear pedido");
-    Console.WriteLine("2. Listar pedidos");
-    Console.WriteLine("3. Salir");
+    Console.WriteLine();
+    Console.WriteLine("1. Ver inventario");
+    Console.WriteLine("2. Crear pedido");
+    Console.WriteLine("3. Listar pedidos");
+    Console.WriteLine("4. Salir");
     Console.Write("Seleccione una opción: ");
 
-    string? option = Console.ReadLine();
-    switch (option)
+    switch (Console.ReadLine())
     {
         case "1":
-            Console.WriteLine("=== NUEVO PEDIDO ===");
-
-            Console.Write("Introduzca el ID del pedido: ");
-            string? id = Console.ReadLine();
-
-            Console.Write("Introduzca el tipo de cliente (Regular, Premium, Vip): ");
-            string? customerType = Console.ReadLine();
-
-            Console.Write("Introduzca la cantidad total del pedido: ");
-            string? totalInput = Console.ReadLine();
-
-            Console.Write("$Introduzca el tipo de pedido {Standar, Express}:");
-            string? orderType = Console.ReadLine();
-
-
-
-            if (!TryCreateOrder(id, customerType, totalInput,orderType, out Order? order, out string? error))
-            {
-                Console.WriteLine(error);
-                continue;
-            }
-
-            _orders.Add(order);
-            Console.WriteLine($"Pedido creado: {order.Id}, Descuento: {order.DiscountRate}");
+            ListProducts();
             break;
 
         case "2":
+            try
+            {
+                CreateOrder(); // pide los datos por consola y llama a warehouse.PlaceOrder(...)
+            }
+            catch (InsufficientStockException ex)
+            {
+                // Console.WriteLine($"Pedido rechazado: {ex.Message}");
+                Console.WriteLine(@$"Producto: {ex.ProductName}, 
+                solicitado: {ex.Requested}, 
+                
+                disponible: {ex.Available}");
+            }
+            finally
+            {
+                Console.WriteLine("Procesamiento del pedido finalizado.");
+            }
+            break;
+
+
+        case "3":
             ListOrders();
             break;
 
-        case "3":
+        case "4":
             return;
 
         default:
@@ -62,58 +61,70 @@ while (true)
     }
 }
 
+void ListProducts()
+{
+    Console.WriteLine("=== INVENTARIO ===");
+    Console.WriteLine($"{"",1} {"Nombre",-15} {"Precio",8} {"Stock",6}");
+    Console.WriteLine(new string('-', 33));
+
+    foreach (Product product in warehouse.Products)
+    {
+        string flag = product.Stock < 50 ? "⚠" : " ";
+        Console.WriteLine($"{flag} {product.Name,-15} {product.Price,8:C2} {product.Stock,6}");
+    }
+
+    Console.WriteLine($"\nProductos con poco stock: {warehouse.LowStockCount}");
+    Console.WriteLine($"Valor total del inventario: {warehouse.TotalInventoryValue():C2}");
+}
+
+void CreateOrder()
+{
+    Console.WriteLine("=== NUEVO PEDIDO ===");
+
+    Console.Write("Producto: ");
+    string productName = Console.ReadLine() ?? "";
+
+    Console.Write("Cantidad: ");
+    if (!int.TryParse(Console.ReadLine(), out int quantity))
+    {
+        Console.WriteLine("Cantidad inválida.");
+        return;
+    }
+
+    Console.Write("Tipo de cliente (Regular, Premium, Vip): ");
+    if (!Enum.TryParse(Console.ReadLine(), out CustomerType customer))
+    {
+        Console.WriteLine("Tipo de cliente inválido.");
+        return;
+    }
+
+    Console.Write("Tipo de envío (Standard, Express, Bulk): ");
+    if (!Enum.TryParse(Console.ReadLine(), out ShippingType shipping))
+    {
+        Console.WriteLine("Tipo de envío inválido.");
+        return;
+    }
+
+    Order order = warehouse.PlaceOrder(productName, quantity, customer, shipping);
+    Console.WriteLine($"Pedido {order.Id} creado. Total: {order.Total:C2}");
+}
+
 void ListOrders()
 {
-    if (_orders.Count == 0)
+    if (warehouse.Orders.Count == 0)
     {
         Console.WriteLine("No hay pedidos para mostrar.");
         return;
     }
 
     Console.WriteLine("=== PEDIDOS ===");
-    foreach (var order in _orders)
+    foreach (Order order in warehouse.Orders)
     {
-        Console.WriteLine($"ID: {order.Id}, Descuento: {order.DiscountRate}");
-        if(order is ITrackeable trackeable)
-        {  
-            Console.WriteLine($"URL: {trackeable.GetTrackingUrl()}");
+        Console.WriteLine($"{order.Id} ({order.GetType().Name}) Cliente: {order.Customer}, Total: {order.Total:C2}, Descuento: {order.DiscountRate:P0}, Estado: {order.Status}");
+
+        if (order is ITrackable trackable)
+        {
+            Console.WriteLine($"    Seguimiento: {trackable.GetTrackingUrl()}");
         }
     }
-}
-
-// C# tiene mecaniusmos como los llamados Attributes:
-// NotNullWhen es un atributo que indica que el parámetro de salida "order" no será nulo cuando el método devuelva true.
-bool TryCreateOrder(string? id, string? customerType, string? totalInput,string? orderType,
-    [NotNullWhen(true)] out Order? order, out string? error)
-{
-    order = null;
-    error = null;
-
-    if (string.IsNullOrWhiteSpace(id))
-    {
-        error = "ID del pedido inválido.";
-        return false;
-    }
-
-    if (!Enum.TryParse(customerType, out CustomerType type))
-    {
-        error = "Tipo de cliente inválido.";
-        return false;
-    }
-
-    if (!decimal.TryParse(totalInput, out var total))
-    {
-        error = "Cantidad total inválida.";
-        return false;
-    }
-
-    if (!Enum.TryParse(orderType, out ShippingType  shippingType))
-    {
-        error = "Tipo de envio inválido.";
-        return false;
-    }
-
-    order = OrderFactory.Create(id, type, total,shippingType);
-
-    return true;
 }

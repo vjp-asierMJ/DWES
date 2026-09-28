@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj": {}
+    "C:\\Users\\alumno\\DWES\\Tema 2\\UT2ABase\\UT2ABase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj": {
+    "C:\\Users\\alumno\\DWES\\Tema 2\\UT2ABase\\UT2ABase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj",
-        "projectName": "OrderFactoryPattern",
-        "projectPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\OrderFactoryPattern.csproj",
+        "projectUniqueName": "C:\\Users\\alumno\\DWES\\Tema 2\\UT2ABase\\UT2ABase.csproj",
+        "projectName": "UT2ABase",
+        "projectPath": "C:\\Users\\alumno\\DWES\\Tema 2\\UT2ABase\\UT2ABase.csproj",
         "packagesPath": "C:\\Users\\alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\OrderFactoryPattern\\obj\\",
+        "outputPath": "C:\\Users\\alumno\\DWES\\Tema 2\\UT2ABase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alumno\\AppData\\Roaming\\NuGet\\NuGet.Config"

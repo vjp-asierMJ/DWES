@@ -1,4 +1,4 @@
-namespace OrderFactoryPattern;
+namespace NovaWarehouse.Models;
 
 /// <summary>
 /// Represents the type of customer placing an order.

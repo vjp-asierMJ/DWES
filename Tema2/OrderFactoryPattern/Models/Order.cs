@@ -1,11 +1,16 @@
-namespace OrderFactoryPattern;
-abstract class Order
+namespace NovaWarehouse.Models;
+
+/// <summary>
+/// Represents an order with its details.
+/// </summary>
+internal abstract class Order
 {
     public string Id { get; init; }
     public CustomerType Customer { get; init; }
     public string Status { get; set; } = "Pending";
     public decimal Total { get; init; }
     public decimal DiscountRate { get; init; }
+
     public Order(string id, CustomerType customer, decimal total)
     {
         Id = id;
@@ -19,5 +24,6 @@ abstract class Order
             _ => throw new ArgumentOutOfRangeException(nameof(customer))
         };
     }
+
     public abstract decimal CalculateShippingCost(double weightKg);
 }

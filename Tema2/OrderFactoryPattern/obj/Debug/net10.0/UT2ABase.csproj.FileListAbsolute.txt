@@ -1,0 +1,14 @@
+C:\Users\alumno\DWES\Tema 2\UT2ABase\bin\Debug\net10.0\UT2ABase.exe
+C:\Users\alumno\DWES\Tema 2\UT2ABase\bin\Debug\net10.0\UT2ABase.deps.json
+C:\Users\alumno\DWES\Tema 2\UT2ABase\bin\Debug\net10.0\UT2ABase.runtimeconfig.json
+C:\Users\alumno\DWES\Tema 2\UT2ABase\bin\Debug\net10.0\UT2ABase.dll
+C:\Users\alumno\DWES\Tema 2\UT2ABase\bin\Debug\net10.0\UT2ABase.pdb
+C:\Users\alumno\DWES\Tema 2\UT2ABase\obj\Debug\net10.0\UT2ABase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alumno\DWES\Tema 2\UT2ABase\obj\Debug\net10.0\UT2ABase.AssemblyInfoInputs.cache
+C:\Users\alumno\DWES\Tema 2\UT2ABase\obj\Debug\net10.0\UT2ABase.AssemblyInfo.cs
+C:\Users\alumno\DWES\Tema 2\UT2ABase\obj\Debug\net10.0\UT2ABase.csproj.CoreCompileInputs.cache
+C:\Users\alumno\DWES\Tema 2\UT2ABase\obj\Debug\net10.0\UT2ABase.dll
+C:\Users\alumno\DWES\Tema 2\UT2ABase\obj\Debug\net10.0\refint\UT2ABase.dll
+C:\Users\alumno\DWES\Tema 2\UT2ABase\obj\Debug\net10.0\UT2ABase.pdb
+C:\Users\alumno\DWES\Tema 2\UT2ABase\obj\Debug\net10.0\UT2ABase.genruntimeconfig.cache
+C:\Users\alumno\DWES\Tema 2\UT2ABase\obj\Debug\net10.0\ref\UT2ABase.dll

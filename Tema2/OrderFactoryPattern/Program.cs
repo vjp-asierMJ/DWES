@@ -41,6 +41,10 @@ while (true)
                 
                 disponible: {ex.Available}");
             }
+            catch (ProductNotFoundException)
+            {
+                Console.WriteLine("Producto no encontrado");
+            }
             finally
             {
                 Console.WriteLine("Procesamiento del pedido finalizado.");
@@ -105,8 +109,12 @@ void CreateOrder()
         return;
     }
 
+    using var log = new StreamWriter("orders.log", append: true);
+    log.WriteLine($"{DateTime.Now:s} REQUEST {quantity} x {productName}");
+
     Order order = warehouse.PlaceOrder(productName, quantity, customer, shipping);
-    Console.WriteLine($"Pedido {order.Id} creado. Total: {order.Total:C2}");
+    log.WriteLine($"{DateTime.Now:s} ACCEPTED {order.Id}");
+    // Dispose() automático al salir del método, también si PlaceOrder lanza
 }
 
 void ListOrders()

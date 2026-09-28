@@ -25,11 +25,16 @@ internal class Warehouse(string name)
     public Order PlaceOrder(string productName, int quantity,
         CustomerType customer = CustomerType.Regular, ShippingType shipping = ShippingType.Standard)
     {
-        Product product = _products.First(p => p.Name == productName);
+        Product? product = _products.First(p => p.Name == productName);
 
         if (product.Stock < quantity)
         {
             throw new InsufficientStockException(productName, quantity, product.Stock);
+        }
+
+        if (product is null)
+        {
+            throw new ProductNotFoundException(productName);
         }
         product.Stock -= quantity;
 

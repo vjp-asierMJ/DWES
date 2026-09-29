@@ -7,7 +7,7 @@ Product wrap = new("Pallet Wrap", 12.50m);
 Product helmet = new("Safety Helmet", 18.90m);
 
 // Un cliente navega por la tienda: guardamos los 3 últimos productos que ha visto...
-RecentProducts recentProducts = new(capacity: 3);
+RecentItems<Product> recentProducts = new(capacity: 3);
 recentProducts.Add(bracket);
 recentProducts.Add(box);
 recentProducts.Add(wrap);
@@ -15,29 +15,30 @@ recentProducts.Add(bracket); // lo vuelve a ver: sube arriba, sin duplicarse
 recentProducts.Add(helmet); // ya no cabe: sale el más antiguo (box)
 
 // ...y sus 3 últimas búsquedas
-RecentSearches recentSearches = new(capacity: 3);
+RecentItems<string> recentSearches = new(capacity: 3);
 recentSearches.Add("helmet");
 recentSearches.Add("box");
 recentSearches.Add("helmet");
 recentSearches.Add("wrap");
 recentSearches.Add("bracket");
 
-PrintProducts(recentProducts);
-PrintSearches(recentSearches);
+PrintAllRecentItems<Product>(recentProducts);
+PrintAllRecentItems<string>(recentSearches);
 
-void PrintProducts(RecentProducts recent)
+//Ejercicio pedidos consultados
+RecentItems<Order> recentOrders = new(capacity: 2);
+recentOrders.Add(new Order("ORD-001", 125.50m));
+recentOrders.Add(new Order("ORD-002", 89.90m));
+recentOrders.Add(new Order("ORD-003", 210.00m));
+
+PrintAllRecentItems<Order>(recentOrders);
+//
+
+
+void PrintAllRecentItems<T>(RecentItems<T> recent)
 {
     Console.WriteLine($"Vistos recientemente ({recent.Items.Count}/{recent.Capacity}):");
-    foreach (Product item in recent.Items)
-    {
-        Console.WriteLine($"  - {item}");
-    }
-}
-
-void PrintSearches(RecentSearches recent)
-{
-    Console.WriteLine($"Búsquedas recientes ({recent.Items.Count}/{recent.Capacity}):");
-    foreach (string item in recent.Items)
+    foreach (T item in recent.Items)
     {
         Console.WriteLine($"  - {item}");
     }

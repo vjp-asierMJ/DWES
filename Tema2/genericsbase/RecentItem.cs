@@ -2,22 +2,19 @@
 
 namespace Generics;
 
-/// <summary>
-/// Keeps the last searches made by a customer, most recent first.
-/// </summary>
-internal class RecentSearches
+internal class RecentItems<T>
 {
-    private readonly List<string> _items = [];
+    private readonly List<T> _items = [];
 
-    public RecentSearches(int capacity)
+    public RecentItems(int capacity)
     {
         Capacity = capacity;
     }
 
     public int Capacity { get; }
-    public IReadOnlyList<string> Items => _items;
+    public IReadOnlyList<T> Items => _items;
 
-    public void Add(string item)
+    public void Add(T item)
     {
         _items.Remove(item); // si ya estaba, lo quitamos para no duplicarlo...
         _items.Insert(0, item); // ...y lo ponemos el primero: el más reciente

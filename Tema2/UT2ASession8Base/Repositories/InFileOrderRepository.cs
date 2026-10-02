@@ -17,6 +17,7 @@ internal class InFileOrderRepository(string path) : IRepository<Order>
         }
         return File.ReadAllLines(_path).Select(FromLine).ToList();
     }
+
     private static string ToLine(Order order)
     {
         ShippingType shipping = order switch

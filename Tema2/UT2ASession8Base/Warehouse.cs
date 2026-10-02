@@ -24,6 +24,8 @@ internal class Warehouse(string name, IRepository<Order> repository)
     public decimal TotalInventoryValue() =>
         _products.Sum(p => p.Price * p.Stock);
 
+    public Order? FindOrder(string id) => _orders.GetById(id);
+
     /// <summary>
     /// Creates an order for <paramref name="quantity"/> units of a product and takes them out of stock.
     /// </summary>
@@ -60,4 +62,5 @@ internal class Warehouse(string name, IRepository<Order> repository)
 
         return order;
     }
+    
 }

@@ -25,7 +25,8 @@ while (true)
     Console.WriteLine("1. Ver inventario");
     Console.WriteLine("2. Crear pedido");
     Console.WriteLine("3. Listar pedidos");
-    Console.WriteLine("4. Salir");
+    Console.WriteLine("4. Buscar pedido");
+    Console.WriteLine("5. Salir");
     Console.Write("Seleccione una opción: ");
 
     switch (Console.ReadLine())
@@ -63,6 +64,10 @@ while (true)
             break;
 
         case "4":
+            FindOrder();
+            break;
+
+        case "5":
             return;
 
         default:
@@ -143,4 +148,30 @@ void ListOrders()
             Console.WriteLine($"    Seguimiento: {trackable.GetTrackingUrl()}");
         }
     }
+}
+
+
+void FindOrder()
+{
+    Console.WriteLine("Introduce le id del programa");
+
+    string? idOrder = Console.ReadLine();
+
+    if(idOrder is null)
+    {
+        Console.Write($"La orden con id {idOrder} no existe");
+        return;
+    }
+    
+
+    Order? order = warehouse.FindOrder(idOrder);
+
+    if (order is null)
+    {
+        Console.Write($"La orden con el id {idOrder} no existe");
+        return;
+    }
+
+    Console.WriteLine($"{order.Id} ({order.GetType().Name}) Cliente: {order.Customer}, Total: {order.Total:C2}, Descuento: {order.DiscountRate:P0}, Estado: {order.Status}");
+
 }

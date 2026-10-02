@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\GenericsBase\\GenericsBase.csproj": {}
+    "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\genericsbase\\GenericsBase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\GenericsBase\\GenericsBase.csproj": {
+    "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\genericsbase\\GenericsBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\GenericsBase\\GenericsBase.csproj",
+        "projectUniqueName": "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\genericsbase\\GenericsBase.csproj",
         "projectName": "GenericsBase",
-        "projectPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\GenericsBase\\GenericsBase.csproj",
-        "packagesPath": "C:\\Users\\alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\GenericsBase\\obj\\",
+        "projectPath": "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\genericsbase\\GenericsBase.csproj",
+        "packagesPath": "C:\\Users\\Asier\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\genericsbase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alumno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Asier\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

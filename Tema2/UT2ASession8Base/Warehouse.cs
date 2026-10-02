@@ -1,5 +1,6 @@
 using NovaWarehouse.Exceptions;
 using NovaWarehouse.Models;
+using NovaWarehouse.Repositories;
 
 namespace NovaWarehouse;
 
@@ -11,10 +12,10 @@ internal class Warehouse(string name)
     public string Name { get; init; } = name;
 
     private readonly List<Product> _products = [];
-    private readonly List<Order> _orders = [];
+    private readonly IRepository<Order> _orders;
 
     public IReadOnlyList<Product> Products => _products;
-    public IReadOnlyList<Order> Orders => _orders;
+    public IReadOnlyList<Order> Orders => _orders.GetAllItems();
 
     public int LowStockCount => _products.Count(p => p.Stock < 50);
 
@@ -49,7 +50,7 @@ internal class Warehouse(string name)
             throw new InsufficientStockException(productName, quantity, product.Stock);
         }
 
-        string id = $"ORD-{_orders.Count + 1:D4}";
+        string id = $"ORD-{_orders.GetAllItems().Count + 1:D4}";
         Order order = OrderFactory.Create(id, customer, product.Price * quantity, shipping);
 
         // Solo modificamos el estado cuando ya no puede fallar nada:

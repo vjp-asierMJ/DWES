@@ -7,12 +7,12 @@ namespace NovaWarehouse;
 /// <summary>
 /// Manages the products in stock and the orders placed against them.
 /// </summary>
-internal class Warehouse(string name)
+internal class Warehouse(string name, IRepository<Order> repository)
 {
     public string Name { get; init; } = name;
 
     private readonly List<Product> _products = [];
-    private readonly IRepository<Order> _orders;
+    private readonly IRepository<Order> _orders = repository;
 
     public IReadOnlyList<Product> Products => _products;
     public IReadOnlyList<Order> Orders => _orders.GetAllItems();

@@ -1,0 +1,15 @@
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\bin\Debug\net10.0\UT2ASession8Base.exe
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\bin\Debug\net10.0\UT2ASession8Base.deps.json
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\bin\Debug\net10.0\UT2ASession8Base.runtimeconfig.json
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\bin\Debug\net10.0\UT2ASession8Base.dll
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\bin\Debug\net10.0\UT2ASession8Base.pdb
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\UT2ASession8Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\UT2ASession8Base.AssemblyInfoInputs.cache
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\UT2ASession8Base.AssemblyInfo.cs
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\UT2ASession8Base.csproj.CoreCompileInputs.cache
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\UT2ASession8Base.sourcelink.json
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\UT2ASession8Base.dll
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\refint\UT2ASession8Base.dll
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\UT2ASession8Base.pdb
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\UT2ASession8Base.genruntimeconfig.cache
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession8Base\obj\Debug\net10.0\ref\UT2ASession8Base.dll

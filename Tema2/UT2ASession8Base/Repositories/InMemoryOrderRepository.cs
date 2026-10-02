@@ -18,14 +18,14 @@ internal class InMemoryOrderRepository : IRepository<Order>
 
     public Order? GetById(string id)
     {
-        Order? orderFound = null;
-        foreach (var order in _orders)
-        {
-            if (order.Id == id)
-            {
-               return order;
-            }
-        }
-        return null;
+        return _orders.FirstOrDefault(o => o.Id == id);
+        // foreach (var order in _orders)
+        // {
+        //     if (order.Id == id)
+        //     {
+        //        return order;
+        //     }
+        // }
+        // return null;
     }
 }

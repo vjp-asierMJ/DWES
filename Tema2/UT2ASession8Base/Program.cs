@@ -1,8 +1,13 @@
 using NovaWarehouse;
 using NovaWarehouse.Exceptions;
 using NovaWarehouse.Models;
+using NovaWarehouse.Repositories;
 
-Warehouse warehouse = new("NovaWarehouse");
+
+
+IRepository<Order> _repository = new InFileOrderRepository("orders.csv");
+
+Warehouse warehouse = new("NovaWarehouse",_repository);
 warehouse.AddProduct(new Product("Steel Bracket", 4.25m, 120));
 warehouse.AddProduct(new Product("Cardboard Box", 0.80m, 500));
 warehouse.AddProduct(new Product("Pallet Wrap", 12.50m, 30));

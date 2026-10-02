@@ -15,7 +15,6 @@ internal class InMemoryOrderRepository : IRepository<Order>
     {
         return _orders;
     }
-    }
 
     public Order? GetById(string id)
     {

@@ -26,7 +26,8 @@ while (true)
     Console.WriteLine("2. Crear pedido");
     Console.WriteLine("3. Listar pedidos");
     Console.WriteLine("4. Buscar pedido");
-    Console.WriteLine("5. Salir");
+    Console.WriteLine("5. Estadisticas");
+    Console.WriteLine("0. Salir");
     Console.Write("Seleccione una opción: ");
 
     switch (Console.ReadLine())
@@ -68,6 +69,10 @@ while (true)
             break;
 
         case "5":
+            ShowStats();
+            break;
+
+         case "0":
             return;
 
         default:
@@ -75,6 +80,22 @@ while (true)
             break;
     }
 }
+
+void ShowStats()
+        //Numero de pedidos por tipo de cliente (GroupBy)
+{       var ordersGrouped =  warehouse.Orders.GroupBy(o => o.Customer).Select(g => new {CustomerType = g.Key, Size = g.Count()});
+       
+       foreach (var group in ordersGrouped)
+    {
+        group.CustomerType
+        group.Size
+    }
+       
+       //order de mayor importe
+        var order = warehouse.Orders.OrderByDescending(o => o.Total).First();
+    
+}
+
 
 void ListProducts()
 {

@@ -14,8 +14,8 @@ warehouse.AddProduct(new Product("Pallet Wrap", 12.50m, 30));
 warehouse.AddProduct(new Product("Safety Helmet", 18.90m, 15));
 
 // customer y shipping son parámetros opcionales: si no los pasamos, se usan sus valores por defecto
-warehouse.PlaceOrder("Cardboard Box", quantity: 100, CustomerType.Premium, ShippingType.Express);
-warehouse.PlaceOrder("Steel Bracket", quantity: 20);
+// warehouse.PlaceOrder("Cardboard Box", quantity: 100, CustomerType.Premium, ShippingType.Express);
+// warehouse.PlaceOrder("Steel Bracket", quantity: 20);
 
 Console.WriteLine($"=== {warehouse.Name.ToUpper()} ===");
 

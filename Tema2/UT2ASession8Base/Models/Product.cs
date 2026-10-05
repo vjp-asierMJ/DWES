@@ -3,7 +3,7 @@ namespace NovaWarehouse.Models;
 /// <summary>
 /// Represents a product stored in the warehouse.
 /// </summary>
-internal class Product(string name, decimal price, int stock)
+internal abstract class Product(string name, decimal price, int stock)
 {
     public string Name { get; init; } = name;
     public decimal Price { get; init; } = price;

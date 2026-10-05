@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using NovaWarehouse;
 using NovaWarehouse.Exceptions;
 using NovaWarehouse.Models;
@@ -6,8 +7,9 @@ using NovaWarehouse.Repositories;
 
 
 IRepository<Order> _repository = new InFileOrderRepository("orders.csv");
+IRepository<Product> _proRepository = new InFileOrderRepository("products.csv");
 
-Warehouse warehouse = new("NovaWarehouse",_repository);
+Warehouse warehouse = new("NovaWarehouse", _repository);
 warehouse.AddProduct(new Product("Steel Bracket", 4.25m, 120));
 warehouse.AddProduct(new Product("Cardboard Box", 0.80m, 500));
 warehouse.AddProduct(new Product("Pallet Wrap", 12.50m, 30));
@@ -72,7 +74,7 @@ while (true)
             ShowStats();
             break;
 
-         case "0":
+        case "0":
             return;
 
         default:
@@ -82,18 +84,21 @@ while (true)
 }
 
 void ShowStats()
-        //Numero de pedidos por tipo de cliente (GroupBy)
-{       var ordersGrouped =  warehouse.Orders.GroupBy(o => o.Customer).Select(g => new {CustomerType = g.Key, Size = g.Count()});
-       
-       foreach (var group in ordersGrouped)
+//Numero de pedidos por tipo de cliente (GroupBy)
+{
+    var ordersGrouped = warehouse.Orders.GroupBy(o => o.Customer).Select(g => new { CustomerType = g.Key, Size = g.Count() });
+
+    foreach (var group in ordersGrouped)
     {
-        group.CustomerType
-        group.Size
+        Console.WriteLine($"Tipo de Cliente: {group.CustomerType}, Count: {group.Size}");
+
     }
-       
-       //order de mayor importe
-        var order = warehouse.Orders.OrderByDescending(o => o.Total).First();
-    
+
+    //order de mayor importe
+    var order = warehouse.Orders.OrderByDescending(o => o.Total).First();
+    Console.WriteLine($"{order.Id} ({order.GetType().Name}) Cliente: {order.Customer}, Total: {order.Total:C2}, Descuento: {order.DiscountRate:P0}, Estado: {order.Status}");
+
+
 }
 
 
@@ -178,12 +183,12 @@ void FindOrder()
 
     string? idOrder = Console.ReadLine();
 
-    if(idOrder is null)
+    if (idOrder is null)
     {
         Console.Write($"La orden con id {idOrder} no existe");
         return;
     }
-    
+
 
     Order? order = warehouse.FindOrder(idOrder);
 

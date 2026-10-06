@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\UT2ASession8Base\\UT2ASession8Base.csproj": {}
+    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\UT2ASession8Base\\UT2ASession8Base.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\UT2ASession8Base\\UT2ASession8Base.csproj": {
+    "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\UT2ASession8Base\\UT2ASession8Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\UT2ASession8Base\\UT2ASession8Base.csproj",
+        "projectUniqueName": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\UT2ASession8Base\\UT2ASession8Base.csproj",
         "projectName": "UT2ASession8Base",
-        "projectPath": "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\UT2ASession8Base\\UT2ASession8Base.csproj",
-        "packagesPath": "C:\\Users\\Asier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asier\\OneDrive\\Desktop\\SEGUNDO SUPERIOR\\DWES\\DWES\\Tema2\\UT2ASession8Base\\obj\\",
+        "projectPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\UT2ASession8Base\\UT2ASession8Base.csproj",
+        "packagesPath": "C:\\Users\\alumno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\UT2ASession8Base\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asier\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\alumno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

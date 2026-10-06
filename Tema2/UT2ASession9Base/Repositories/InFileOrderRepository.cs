@@ -63,7 +63,7 @@ internal class InFileOrderRepository(string path) : IRepository<Order>
             customer: Enum.Parse<CustomerType>(fields[1]),
             total: decimal.Parse(fields[3], CultureInfo.InvariantCulture),
             shipping: Enum.Parse<ShippingType>(fields[2]));
-        order.Status = fields[4];
+        order.Status = Enum.Parse<OrderStatus>(fields[4]);
 
         return order;
     }

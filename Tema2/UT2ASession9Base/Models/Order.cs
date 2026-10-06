@@ -7,15 +7,17 @@ internal abstract class Order
 {
     public string Id { get; init; }
     public CustomerType Customer { get; init; }
-    public string Status { get; set; } = "Pending";
-    public decimal Total { get; init; }
+    public OrderStatus Status { get; set; } = OrderStatus.Pending;
+    public decimal Total => OrderLines.Sum(l => l.Subtotal);
     public decimal DiscountRate { get; init; }
 
-    public Order(string id, CustomerType customer, decimal total)
+    public List<OrderLine> OrderLines { get; init; }= [];
+
+    public Order(string id, CustomerType customer, List<OrderLine> lines)
     {
         Id = id;
         Customer = customer;
-        Total = total;
+        OrderLines = lines;
         DiscountRate = customer switch
         {
             CustomerType.Regular => 0.00m,

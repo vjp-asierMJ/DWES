@@ -1,0 +1,5 @@
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession9Base\obj\Debug\net10.0\UT2ASession9Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession9Base\obj\Debug\net10.0\UT2ASession9Base.AssemblyInfoInputs.cache
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession9Base\obj\Debug\net10.0\UT2ASession9Base.AssemblyInfo.cs
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession9Base\obj\Debug\net10.0\UT2ASession9Base.csproj.CoreCompileInputs.cache
+C:\Users\alumno\DWES\DWES\Tema2\UT2ASession9Base\obj\Debug\net10.0\UT2ASession9Base.sourcelink.json

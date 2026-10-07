@@ -7,11 +7,11 @@ namespace NovaWarehouse;
 /// </summary>
 internal static class OrderFactory
 {
-    public static Order Create(string id, CustomerType customer, decimal total, ShippingType shipping) => shipping switch
+    public static Order Create(string id, CustomerType customer, List<OrderLine> lines, ShippingType shipping) => shipping switch
     {
-        ShippingType.Standard => new StandardOrder(id, customer, total),
-        ShippingType.Express => new ExpressOrder(id, customer, total),
-        ShippingType.Bulk => new BulkOrder(id, customer, total),
+        ShippingType.Standard => new StandardOrder(id, customer, lines),
+        ShippingType.Express => new ExpressOrder(id, customer, lines),
+        ShippingType.Bulk => new BulkOrder(id, customer, lines),
         _ => throw new ArgumentOutOfRangeException(nameof(shipping))
     };
 }

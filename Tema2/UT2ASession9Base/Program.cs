@@ -116,6 +116,8 @@ void CreateOrder()
 {
     Console.WriteLine("=== NUEVO PEDIDO ===");
 
+    OrderBuilder orderBuilder = new();
+
     Console.Write("Producto: ");
     string productName = Console.ReadLine() ?? "";
 
@@ -139,6 +141,9 @@ void CreateOrder()
         Console.WriteLine("Tipo de envío inválido.");
         return;
     }
+
+    orderBuilder.ForCustomer(customer)
+        .WithShipping(shipping);
 
     // using: Dispose() cierra el fichero al salir del método, también si PlaceOrder lanza una excepción
     using var log = new StreamWriter("orders.log", append: true);

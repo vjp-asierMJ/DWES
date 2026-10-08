@@ -118,15 +118,15 @@ void CreateOrder()
 
     OrderBuilder orderBuilder = new();
 
-    Console.Write("Producto: ");
-    string productName = Console.ReadLine() ?? "";
+    // Console.Write("Producto: ");
+    // string productName = Console.ReadLine() ?? "";
 
-    Console.Write("Cantidad: ");
-    if (!int.TryParse(Console.ReadLine(), out int quantity))
-    {
-        Console.WriteLine("Cantidad inválida.");
-        return;
-    }
+    // Console.Write("Cantidad: ");
+    // if (!int.TryParse(Console.ReadLine(), out int quantity))
+    // {
+    //     Console.WriteLine("Cantidad inválida.");
+    //     return;
+    // }
 
     Console.Write("Tipo de cliente (Regular, Premium, Vip): ");
     if (!Enum.TryParse(Console.ReadLine(), out CustomerType customer))
@@ -142,15 +142,40 @@ void CreateOrder()
         return;
     }
 
-    orderBuilder.ForCustomer(customer)
+    orderBuilder
+        .ForCustomer(customer)
         .WithShipping(shipping);
 
-    // using: Dispose() cierra el fichero al salir del método, también si PlaceOrder lanza una excepción
-    using var log = new StreamWriter("orders.log", append: true);
-    log.WriteLine($"{DateTime.Now:s} REQUEST  {quantity} x {productName}");
+    string addMoreProducts = "";
+    
+    do
+    {
+        Console.Write("Producto: ");
+        
+        Product product = warehouse.GetProduct(Console.ReadLine() ?? "");
 
-    Order order = warehouse.PlaceOrder(productName, quantity, customer, shipping);
-    log.WriteLine($"{DateTime.Now:s} ACCEPTED {order.Id}");
+        Console.Write("Cantidad: ");
+        if (!int.TryParse(Console.ReadLine(), out int quantity))
+        {
+            Console.WriteLine("Cantidad inválida.");
+            return;
+        }
+
+        orderBuilder.AddLine(product,quantity);
+
+
+    } while (Console.ReadLine()?.ToLower() == "s");
+
+    Order order = warehouse.PlaceOrder(orderBuilder);
+
+    // using: Dispose() cierra el fichero al salir del método, también si PlaceOrder lanza una excepción
+    // using var log = new StreamWriter("orders.log", append: true);
+    // log.WriteLine($"{DateTime.Now:s} REQUEST  {quantity} x {productName}");
+
+    
+
+    // Order order = warehouse.PlaceOrder(productName, quantity, customer, shipping);
+    // log.WriteLine($"{DateTime.Now:s} ACCEPTED {order.Id}");
 
     Console.WriteLine($"Pedido {order.Id} creado. Total: {order.Total:C2}");
 }

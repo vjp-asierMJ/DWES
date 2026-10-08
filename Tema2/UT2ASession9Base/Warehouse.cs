@@ -20,6 +20,9 @@ internal class Warehouse(string name, IRepository<Product> products, IRepository
 
     public int LowStockCount => Products.Count(p => p.Stock < 50);
 
+    public Product GetProduct(string name) => 
+        _products.GetById(name) ?? throw new ProductNotFoundException(name);
+
     public void AddProduct(Product product) => _products.Add(product);
 
     public decimal TotalInventoryValue() =>

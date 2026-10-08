@@ -28,8 +28,8 @@ if (warehouse.Products.Count == 0)
 if (warehouse.Orders.Count == 0)
 {
     // customer y shipping son parámetros opcionales: si no los pasamos, se usan sus valores por defecto
-    warehouse.PlaceOrder("Cardboard Box", quantity: 100, CustomerType.Premium, ShippingType.Express);
-    warehouse.PlaceOrder("Steel Bracket", quantity: 20);
+    // warehouse.PlaceOrder("Cardboard Box", quantity: 100, CustomerType.Premium, ShippingType.Express);
+    // warehouse.PlaceOrder("Steel Bracket", quantity: 20);
 }
 
 Console.WriteLine($"=== {warehouse.Name.ToUpper()} ===");

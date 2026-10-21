@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\Prueba_No_Evaluable\\Prueba_No_Evaluable.csproj",
+      "projectUniqueName": "C:\\Users\\alumno\\DWES\\DWES\\UT1\\Prueba_No_Evaluable\\Prueba_No_Evaluable.csproj",
       "projectName": "Prueba_No_Evaluable",
-      "projectPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\Prueba_No_Evaluable\\Prueba_No_Evaluable.csproj",
+      "projectPath": "C:\\Users\\alumno\\DWES\\DWES\\UT1\\Prueba_No_Evaluable\\Prueba_No_Evaluable.csproj",
       "packagesPath": "C:\\Users\\alumno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alumno\\DWES\\DWES\\Tema2\\Prueba_No_Evaluable\\obj\\",
+      "outputPath": "C:\\Users\\alumno\\DWES\\DWES\\UT1\\Prueba_No_Evaluable\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alumno\\AppData\\Roaming\\NuGet\\NuGet.Config"

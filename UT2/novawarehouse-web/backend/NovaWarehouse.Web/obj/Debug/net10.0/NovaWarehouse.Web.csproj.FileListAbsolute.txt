@@ -29,3 +29,5 @@ C:\Users\alumno\DWES\DWES\UT2\novawarehouse-web\backend\NovaWarehouse.Web\obj\De
 C:\Users\alumno\DWES\DWES\UT2\novawarehouse-web\backend\NovaWarehouse.Web\obj\Debug\net10.0\NovaWarehouse.Web.pdb
 C:\Users\alumno\DWES\DWES\UT2\novawarehouse-web\backend\NovaWarehouse.Web\obj\Debug\net10.0\NovaWarehouse.Web.genruntimeconfig.cache
 C:\Users\alumno\DWES\DWES\UT2\novawarehouse-web\backend\NovaWarehouse.Web\obj\Debug\net10.0\ref\NovaWarehouse.Web.dll
+C:\Users\alumno\DWES\DWES\UT2\novawarehouse-web\backend\NovaWarehouse.Web\obj\Debug\net10.0\NovaWarehouse.Web.RazorAssemblyInfo.cache
+C:\Users\alumno\DWES\DWES\UT2\novawarehouse-web\backend\NovaWarehouse.Web\obj\Debug\net10.0\NovaWarehouse.Web.RazorAssemblyInfo.cs

@@ -1,0 +1,19 @@
+# Carpetas de compilación
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Configuración local
+appsettings.Development.json
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

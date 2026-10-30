@@ -1,16 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
+
+// Registrar los servicios de Razor Pages
+builder.Services.AddRazorPages();
+
 var app = builder.Build();
 
 app.MapStaticAssets();
+app.MapRazorPages();
 
-app.MapGet("/", () => "Hello World!");
-
-app.MapGet("/estado", () => Results.Content(
-$"""
-<link rel="stylesheet" href="/css/estilos.css">
-<h1>NovaWarehouse</h1>
-<p>Hora del servidor: {DateTime.Now:HH:mm:ss}</p>
-""",
-"text/html"));
 
 app.Run();

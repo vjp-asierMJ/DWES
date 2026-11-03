@@ -5,6 +5,6 @@ services:
       - "8080:80"
     depends_on:
       - backend
+
   backend:
     build: ./backend
-# sin ports: no lo exponemos al exterior, solo nginx habla con él

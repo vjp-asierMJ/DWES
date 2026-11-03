@@ -17,6 +17,3 @@ appsettings.Development.json
 # Sistema operativo
 .DS_Store
 Thumbs.db
-
-.bin
-.obj

@@ -1,0 +1,31 @@
+@page
+@{
+    string name = "Caja M";
+    decimal price = 2.50m;
+    int stock = 40;
+    const decimal VatRate = 0.21m;
+}
+<link rel="stylesheet" href="/css/estilos.css">
+<h1>@name</h1>
+<p>Precio: @price.ToString("C")</p>
+<p>Stock: @stock uds</p>
+
+@{
+const int BoxSize = 12;
+}
+<p>Precio con IVA: @((price * (1 + VatRate)).ToString("C"))</p>
+<p>Cajas completas: @(stock / BoxSize)</p>
+<p>Unidades sueltas: @(stock % BoxSize)</p>
+<p>Valor del stock: @((price * stock).ToString("C"))</p>
+
+<p>¿Poco stock? @(stock < 10)</p>
+<p>¿Agotado? @(stock == 0)</p>
+<p>¿Se puede pedir? @(stock > 0 && price > 0)</p>
+
+
+@{
+    stock = 0;
+    bool outOfStock = stock == 0;
+}
+
+<button disabled="@outOfStock">Añadir Pedido</button>

@@ -5,6 +5,8 @@ builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
+app.UseRequestLocalization("en-US");
+
 app.MapStaticAssets();
 app.MapRazorPages();
 

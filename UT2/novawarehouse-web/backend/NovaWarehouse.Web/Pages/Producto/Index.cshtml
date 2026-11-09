@@ -1,22 +1,27 @@
 @page
 @{
-    string name = "Caja M";
-    decimal price = 2.50m;
-    int stock = 8;
+
+    Product producto = new Product
+    {
+        Name = "",
+        Price = 5.15m,
+        Stock = 5
+    };
+
     const decimal VatRate = 0.21m;
     const int BoxSize = 12;
-    decimal priceWithVat = price * (1 + VatRate);
-    string? stockCss = stock < 10 ? "low-stock" : null;
+    decimal priceWithVat = producto.Price * (1 + VatRate);
+    string? stockCss = producto.Stock < 10 ? "low-stock" : null;
 }
 <link rel="stylesheet" href="/css/estilos.css">
 
-<h1>@name</h1>
-<p>Precio: @price.ToString("C") (con IVA: @priceWithVat.ToString("C"))</p>
+<h1>@producto.Name</h1>
+<p>Precio: @producto.Price.ToString("C") (con IVA: @priceWithVat.ToString("C"))</p>
 
-<p class="@stockCss">Stock: @stock uds: @(stock / BoxSize) cajas y @(stock % BoxSize) sueltas</p>
+<p class="@stockCss">Stock: @producto.Stock uds: @(producto.Stock / BoxSize) cajas y @(producto.Stock % BoxSize) sueltas</p>
 
-<p>@(stock < 10 ? "¡Quedan pocas unidades!" : "Stock suficiente")</p>
+<p>@(producto.Stock < 10 ? "¡Quedan pocas unidades!" : "Stock suficiente")</p>
 
-<p>Valor del stock: @((price * stock).ToString("C"))</p>
+<p>Valor del stock: @((producto.Price * producto.Stock).ToString("C"))</p>
 
-<button disabled="@(stock == 0)">Añadir al pedido</button>
+<button disabled="@(producto.Stock == 0)">Añadir al pedido</button>

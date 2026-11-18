@@ -3,9 +3,12 @@
     ViewData["title"] = "Estado";
     
 }
+@model EstadoModel;
 
 <link rel="stylesheet" href="/css/estilos.css">
 <h1>NovaWarehouse</h1>
 <p>Hora del servidor: @DateTime.Now.ToString("HH:mm:ss")</p>
+<p>Visitas: @Model.Visits</p>
 <p>Servidor: @Environment.MachineName</p>
+<p>Visitas desde el arranque: @Model.Visits</p>
 

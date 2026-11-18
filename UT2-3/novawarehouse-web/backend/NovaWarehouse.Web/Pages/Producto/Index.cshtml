@@ -1,27 +1,13 @@
 @page
+
+@model ProductoModel
 @{
     ViewData["title"] = "Producto";
-    Product producto = new Product
-    {
-        Name = "",
-        Price = 5.15m,
-        Stock = 5
-    };
-
-    const decimal VatRate = 0.21m;
-    const int BoxSize = 12;
-    decimal priceWithVat = producto.Price * (1 + VatRate);
-    string? stockCss = producto.Stock < 10 ? "low-stock" : null;
 }
-<link rel="stylesheet" href="/css/estilos.css">
 
-<h1>@producto.Name</h1>
-<p>Precio: @producto.Price.ToString("C") (con IVA: @priceWithVat.ToString("C"))</p>
 
-<p class="@stockCss">Stock: @producto.Stock uds: @(producto.Stock / BoxSize) cajas y @(producto.Stock % BoxSize) sueltas</p>
-
-<p>@(producto.Stock < 10 ? "¡Quedan pocas unidades!" : "Stock suficiente")</p>
-
-<p>Valor del stock: @((producto.Price * producto.Stock).ToString("C"))</p>
-
-<button disabled="@(producto.Stock == 0)">Añadir al pedido</button>
+<h1>@Model.Product.Name</h1>
+<p>Precio: @Model.Product.Price.ToString("C") (con IVA: @Model.PriceWithVat.ToString("C"))</p>
+<p class="@(Model.LowStock ? "low-stock" : null)">Stock: @Model.Product.Stock uds</p>
+<p>@(Model.LowStock ? "¡Quedan pocas unidades!" : "Stock suficiente")</p>
+<button disabled="@(Model.Product.Stock == 0)">Añadir al pedido</button>
